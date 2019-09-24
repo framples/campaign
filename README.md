@@ -5,6 +5,7 @@
 
 ### General Terminology: ###
 1._"DnD"_ = Dungeons and Dragons
+
 2._"One-Shot"_ = A game of DnD meant to end quickly.  Campaigns can stretch long periods of time - a one-shot is a rapid game that usually ends in one session.  A fast paced, highly fun and intense game. 
 
 
@@ -33,15 +34,15 @@
 
 ### Information Included on Site: ###
     At this point I know that I will include the following information: 
-        1. Name of Campaign
+        1. Epic pics
         2. Information on setting/environment
         3. Background on story/major questline
         4. Homebrew race options
         5. Homebrew class options
         6. Maps
         7. Pictures 
-        8. Playlist w/ link to Spotify API of songs played during the campaign. 
-        9. PDFs for players to build Characters on. (stretch)
+        8. Playlist w/ link to Spotify API of songs played during the campaign
+        9. PDFs for players to build Characters on (stretch)
 
 
 
