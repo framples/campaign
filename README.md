@@ -4,8 +4,8 @@
     The purpose of this repo is purely for fun.  I am going to be a dungeon master for the first time in the next few months for a one-shot campaign with some friends.  I thought why not make a website with several things included on it to help give my players information in regards to the campaign.  It's a chance for me to design something fun and practical.  
 
 ### General Terminology: 
-_"DnD"_ = Dungeons and Dragons
-_"One-Shot"_ = A game of DnD meant to end quickly.  Campaigns can stretch long periods of time - a one-shot is a rapid game that usually ends in one session.  A fast paced, highly fun and intense game. 
+1._"DnD"_ = Dungeons and Dragons
+2._"One-Shot"_ = A game of DnD meant to end quickly.  Campaigns can stretch long periods of time - a one-shot is a rapid game that usually ends in one session.  A fast paced, highly fun and intense game. 
 
 
 ### MVP:
@@ -18,7 +18,7 @@ _"One-Shot"_ = A game of DnD meant to end quickly.  Campaigns can stretch long p
 
 
 
-## Tools Used:
+### Tools Used:
     At this point I know that I will be using the following tools: 
         1. HTML
         2. CSS
@@ -31,7 +31,7 @@ _"One-Shot"_ = A game of DnD meant to end quickly.  Campaigns can stretch long p
 
     
 
-## Information Included on Site:
+### Information Included on Site:
     At this point I know that I will include the following information: 
         1. Name of Campaign
         2. Information on setting/environment
