@@ -1,0 +1,23 @@
+{
+  "name": "campaign",
+  "version": "1.0.0",
+  "description": "Campaign Creation",
+  "main": "app.js",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framples33/campaign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/framples33/campaign/issues"
+  },
+  "homepage": "https://github.com/framples33/campaign#readme"
+}
