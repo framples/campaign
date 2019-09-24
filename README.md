@@ -39,10 +39,9 @@
         3. Background on story/major questline
         4. Homebrew race options
         5. Homebrew class options
-        6. Maps
-        7. Pictures 
-        8. Playlist w/ link to Spotify API of songs played during the campaign
-        9. PDFs for players to build Characters on (stretch)
+        6. Maps & Resources: Roll20 // DnD Beyond // DnD Wiki
+        7. Playlist w/ link to Spotify API of songs played during the campaign
+        8. PDFs for players to build Characters on (stretch)
 
 
 
