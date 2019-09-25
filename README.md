@@ -1,7 +1,9 @@
 # Father Forgive Me -- DnD Campaign #
 
 ## Purpose: ##
-    The purpose of this project is purely for fun.  I am going to be a dungeon master for the first time in the next few months for a one-shot campaign with some friends.  I thought why not make a website with several things included on it to help give my players information in regards to the campaign.  It's a chance for me to design something fun and practical.  
+    The purpose of this project is purely for fun.  I am going to be a dungeon master for 
+break line
+    the first time in the next few months for a one-shot campaign with some friends.  I thought why not make a website with several things included on it to help give my players information in regards to the campaign.  It's a chance for me to design something fun and practical.  
 
 ### General Terminology: ###
 1._"DnD"_ = Dungeons and Dragons
