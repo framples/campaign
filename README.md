@@ -12,6 +12,7 @@
 
 
 ### MVP: ###
+<br>
     A simple, clean site used to help build excitement for friends for a one-shot campaign of Dungeons and Dragons.  This is purely informational for the players - sometimes with one-shots things move quickly.  Players aren't familiar with the setting/characters/story etc and this should make as an easy reference and a fun tool for the players.  
 
     1. Put information on site
