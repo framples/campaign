@@ -1,7 +1,10 @@
-# Father Forgive Me -- DnD Campaign #
+# Blood in the Water -- DnD Campaign #
 
 ## Purpose: ##
-    The purpose of this project is purely for fun.  I am going to be a dungeon master for the first time in the next few months for a one-shot campaign with some friends.  I thought why not make a website with several things included on it to help give my players information in regards to the campaign.  It's a chance for me to design something fun and practical.  
+<br>
+    The purpose of this project is purely for fun.  I am going to be a dungeon master for 
+    the first time in the next few months for a one-shot campaign with some friends.  I thought why not make a website with several things included on it to help give my players information in regards to the campaign.  It's a chance for me to design something fun and practical.  
+    
 
 ### General Terminology: ###
 1._"DnD"_ = Dungeons and Dragons
@@ -10,11 +13,11 @@
 
 
 ### MVP: ###
+<br>
     A simple, clean site used to help build excitement for friends for a one-shot campaign of Dungeons and Dragons.  This is purely informational for the players - sometimes with one-shots things move quickly.  Players aren't familiar with the setting/characters/story etc and this should make as an easy reference and a fun tool for the players.  
-
-    1. Put information on site
-    2. Players access information while playing
-    3. Profit? 
+<br>
+ <strong>Put information on site
+ --> Players access information while playing to make game more interactive and fun!</strong>
 
 
 
@@ -35,7 +38,7 @@
 
 ### Information Included on Site: ###
     At this point I know that I will include the following information: 
-        1. Epic pics
+        1. Art
         2. Information on setting/environment
         3. Background on story/major questline
         4. Homebrew race options
