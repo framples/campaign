@@ -1,7 +1,7 @@
 # Blood in the Water -- DnD Campaign #
 
 
-![alt text]https://github.com/framples33/campaign/blob/master/images/Map.png "Map")
+![Map](https://github.com/framples33/campaign/blob/master/images/Map.png)
 
 
 
