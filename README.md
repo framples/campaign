@@ -54,5 +54,6 @@
         8. PDFs for players to build Characters on (stretch)
 
 
+![Product Flowchart](https://github.com/framples33/campaign/blob/master/organization_tools/Blood%20in%20the%20Water%20Flowchart%20PNG.png)
 
         
