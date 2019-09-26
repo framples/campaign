@@ -1,7 +1,42 @@
-Names
+Races Available: //this is a one shot - any player can play anything within reason && would prefer to keep this sort of lore specific, though//
 
-King: Aliester Whitlock 
-1. Half Vampire
+1. Human
+2. Tiefling
+3a. Goblin
+3b. Dwarf
+4. Halfling
+5. Orc
+6a. Troll (Homebrew)
+6b. Minotaur
+7. Vampire (Homewbrew)
+**These are ranked by % of total population**
+
+Classes Available: 
+1. Barbarian
+2. Bard
+3. Cleric
+4. Druid
+5. Fighter
+6. Monk
+7. Paladin
+8. Ranger
+9. Rogue
+10. Sorcerer
+11. Warlock
+12. Wizard
+13. Blood Mage (Homebrew - Vamp/Tief/Human only);
+14. Blood Hunter (Critical Role Homebrew) https://www.dndbeyond.com/classes/blood-hunter;
+15. Chef (Homebrew) https://homebrewery.naturalcrit.com/share/Hkby63LBq-;
+
+
+
+
+
+-------------------------------------------------------
+Names of Characters
+
+King: Aliester Whitlock // 273 y/o
+1. Half Vampire, 
 
 --------------------------------------------------------
 Son #1: Donte Whitlock  //meaning "enduring"//; 23 y/o
@@ -16,10 +51,7 @@ Son #2: Feno Whitlock //meaning "serpent"//; 23 y/o
 
 
 ---------------------------------------------------------
+Daughter: Kora Whitlock //meaning "maiden"//; 13 y/o (4 y/o when Eva died);
 
-Daughter: Kora Whitlock //meaning "maiden"//;
-1. Human
-
-Queen:  Eva Whitlock   //meaning "life"//; 42 at time of disapperance;
-Disappeared 9 years ago. 
-1. Human 
+Queen:  Eva Whitlock   //meaning "life"//; 42 y/o @ time of disappearance 
+1. Missing for 9 years(deceased, murdered by King)
