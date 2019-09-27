@@ -17,12 +17,12 @@ connection.connect(function (err, res) {
 
 function askName() {
     inquirer
-    .prompt({ 
+    .prompt([{ 
             name: "playername",
             type: "input",
             message: "What is your name?"
             
-        })
+        }])
         .then(function(answer){
             let query = "SELECT player FROM playerinfo WHERE ?";
             connection.query(query, {player: answer.player}, function(err,res) {
