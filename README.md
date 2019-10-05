@@ -54,9 +54,9 @@
         8. PDFs for players to build Characters on (stretch)
 <br>
 
-## Creative Web
+## Creative/Gameplan Flow:
 ![Creative Flowchart](https://github.com/framples33/campaign/blob/master/organization_tools/Blood%20in%20the%20Water%20Flowchart%20PNG.png)
 
         
-## Website Overview/Build
+## Website Build/Flow: 
 ![Product Flowchart](https://github.com/framples33/campaign/blob/master/organization_tools/Website%20Structure_Build.png)
