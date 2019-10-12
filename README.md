@@ -32,10 +32,11 @@
         4. Javascript
         5. JQuery
         6. Node
-        7. MySQL (maybe - still learning this).
+        7. MySQL // Sequelize
         8. Wireframe.cc
         9. Inkarnate // Watabou https://watabou.itch.io/medieval-fantasy-city-generator // Azgaar's 
         10. Draw.io
+        11. Express
 
     
 
@@ -48,8 +49,8 @@
         5. Homebrew class options
         6. Maps & Resources: Roll20 // DnD Beyond // DnD Wiki
         7. Playlist w/ link to Spotify API of songs played during the campaign
-        8. Character Builder
-        9. Calendar Scheduling
+        8. Character Building Tool
+        9. Calendar Scheduling Tool
 <br>
 
 ![Map](https://github.com/framples33/campaign/blob/master/images/Map.png)
