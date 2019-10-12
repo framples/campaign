@@ -5,7 +5,7 @@ let db = require("../config/connection.js");
 
 let User = db.define("user", {
 
-    userName: {
+    username: {
         type: Sequelize.STRING,
         unique: true,
         allowNull: false
@@ -38,6 +38,6 @@ let User = db.define("user", {
 
 
 
-Player.sync();
+User.sync();
 
 module.exports = User;
