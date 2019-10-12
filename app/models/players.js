@@ -1,14 +1,43 @@
 let Sequelize = require("sequelize");
+let bcrypt = require("bcrypt");
 
 let db = require("../config/connection.js");
 
-let Player = db.define("player", {
+let User = db.define("user", {
 
-    routeName: Sequelize.STRING,
-    username: Sequelize.STRING,
-    password: Sequelize.STRING
+    userName: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false
+},
+
+    email: {
+        type: Sequelize.STRING,
+        unique: true,
+        allowNull: false
+    },
+
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
+    }
+}, {
+    hooks: {
+        beforeCreate: (user) => {
+            const salt = bcrypt.genSaltSync();
+            user.password = bcrypt.hashSync(user.password, salt);
+        }
+    },
+    instanceMethods: {
+        validPassword: function(password) {
+            return bcrypt.compareSync(password, this.password);
+        }
+    }
 });
+
+
+
 
 Player.sync();
 
-module.exports = Player;
+module.exports = User;
