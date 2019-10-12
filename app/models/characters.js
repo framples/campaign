@@ -1,6 +1,6 @@
 let Sequelize = require("sequelize");
 
-let db = require("../config/connection");
+let db = require("../config/connection.js");
 
 let Character = db.define("character", {
 

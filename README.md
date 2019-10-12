@@ -48,7 +48,8 @@
         5. Homebrew class options
         6. Maps & Resources: Roll20 // DnD Beyond // DnD Wiki
         7. Playlist w/ link to Spotify API of songs played during the campaign
-        8. PDFs for players to build Characters on (stretch)
+        8. Character Builder
+        9. Calendar Scheduling
 <br>
 
 ![Map](https://github.com/framples33/campaign/blob/master/images/Map.png)

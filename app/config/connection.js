@@ -1,6 +1,6 @@
 let Sequelize = require("sequelize");
 
-let db = new Sequelize("sequelize_libary", "root", "Blitzcrank13", {
+let db = new Sequelize("sequelize_bitw", "root", "Blitzcrank13", {
     host: "localhost",
     port: "3306",
     dialect: "mysql",
