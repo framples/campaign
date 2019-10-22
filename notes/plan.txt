@@ -1,0 +1,36 @@
+Plan:
+
+This is to actually mapout actions to take.  Currently I'm doing things...but not really efficiently or effectively.
+
+- Create Two Main Fights 
+- Create two small Fights 
+- Create NPcs 
+- Write story 
+- Blood Mage Homebrew
+- Vampire Homebrew
+- Troll Homebrew 
+- Music Playlists 
+- Maps 
+- Non combat encounters // Fillers 
+- find art 
+
+// Site
+
+- Design home page
+- Design information page
+- Design char creation page
+- Design player page
+- Design login page
+- Design dm page
+- link data to database
+
+- Code auth system
+- code litterally everything
+
+
+To finish by EOD 10/27/2019: 
+
+1. Story
+2. NPCs
+3. Art
+4. Start designing - Colour scheme -- layout -- functionality.  At least finish Home & Information Page. 
