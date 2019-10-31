@@ -53,7 +53,7 @@
         9. Calendar Scheduling Tool
 <br>
 
-![Map](https://github.com/framples33/campaign/blob/master/images/Map.png)
+![Map](https://github.com/framples/campaign/blob/master/images/Map.png)
 
 ## Creative/Gameplan Flow:
 ![Creative Flowchart](https://github.com/framples33/campaign/blob/master/organization_tools/Blood%20in%20the%20Water%20Flowchart%20PNG.png)
