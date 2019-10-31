@@ -1,0 +1,5 @@
+DM Related Sites //
+
+https://open5e.com/ | Shows Classes/Races/Combat/Conditions etc. 
+http://ceryliae.github.io/5edmscreen/index | DM Screen - Allows for random rolls on various things. 
+https://crobi.github.io/dnd5e-quickref/preview/quickref.html | Quick reference guide - Clean.  

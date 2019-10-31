@@ -6,11 +6,9 @@ This is to actually mapout actions to take.  Currently I'm doing things...but no
 - Create two small Fights 
 - Create NPcs 
 - Write story 
-- Blood Mage Homebrew
-- Vampire Homebrew
 - Troll Homebrew 
 - Music Playlists 
-- Maps 
+- Maps (Area Map complete) Still need Whitlock Map // Shyn Map // Mine Map(simple layout)
 - Non combat encounters // Fillers 
 - find art 
 
