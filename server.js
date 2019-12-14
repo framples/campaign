@@ -1,23 +1,31 @@
 let express = require("express");
-let session = require("express-session");
-
+let cors = require("cors");
+let bodyParser = require("body-parser");
 let app = express();
-let PORT = process.env.PORT || 8080;
+let mongoose = require("mongoose");
+let port = process.env.PORT || 5000
 
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
-app.use(session( {
-    secret: "secret",
-    resave: true,
-    saveUninitialized: true
-}));
+app.use(bodyParser.json())
+app.use(cors())
+app.use(
+    bodyParser.urlencoded({
+        extended:false
+    })
+)
 
 
-app.use(express.static("app/public"));
+const mongoURI = 'mongodb://localhost:27017/apexlogincredentials'
 
-require("./app/routes/api-routes.js")(app);
-require("./app/routes/html-routes.js")(app);
+mongoose
+    .connect(mongoURI, { useNewUrlParser: true })
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err))
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-})
+
+let Users = require('./routes/Users')
+
+app.use('/users', Users);
+
+app.listen(port, () => {
+    console.log("Server is running on port: " + port)
+});
