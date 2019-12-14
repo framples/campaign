@@ -14,7 +14,7 @@ app.use(
 )
 
 
-const mongoURI = 'mongodb://localhost:27017/apexlogincredentials'
+const mongoURI = 'mongodb://localhost:27017/ApexCampaign'
 
 mongoose
     .connect(mongoURI, { useNewUrlParser: true })
