@@ -14,12 +14,15 @@ app.use(
 )
 
 
-const mongoURI = 'mongodb://localhost:27017/ApexCampaign'
 
-mongoose
-    .connect(mongoURI, { useNewUrlParser: true })
-    .then(() => console.log("MongoDB connected"))
-    .catch(err => console.log(err))
+
+//mongoose
+  //  .connect(mongoURI, { useNewUrlParser: true })
+    //.then(() => console.log("MongoDB connected"))
+    //.catch(err => console.log(err))
+
+    mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/apexdb");
+
 
 
 let Users = require('./routes/Users')
