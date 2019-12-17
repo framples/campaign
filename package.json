@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon server.js?",
     "start": "node server.js",
-    "test": "node server.js"
+    "test": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "Peter Fairley",
   "license": "ISC",
@@ -21,5 +22,8 @@
     "nodemon": "^2.0.1",
     "path": "^0.12.7"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "13.3.0"
+  }
 }
