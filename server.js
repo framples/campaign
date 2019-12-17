@@ -6,7 +6,7 @@ let mongoose = require("mongoose");
 let port = process.env.PORT || 5000
 let path = require("path");
 
-app.use(express.static(path.join(__dirname, '/client/build')));
+app.use(express.static(path.join(__dirname, '/client/')));
 
 app.use(bodyParser.json())
 app.use(cors())
