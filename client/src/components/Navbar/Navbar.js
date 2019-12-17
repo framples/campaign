@@ -59,7 +59,7 @@ class Navbar extends Component {
                             </Link>
                         </li>
                     </ul>
-                    {localStorage.usertoken ? loginRegLink : userLink}
+                    {localStorage.usertoken ? userLink : loginRegLink}
                 </div>
             </nav>
 

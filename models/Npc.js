@@ -24,4 +24,4 @@ const NpcSchema = new Schema({
     }
 })
 
-module.exports = User = mongoose.model('npcs', NpcSchema)
+module.exports = Npcs = mongoose.model('npcs', NpcSchema)

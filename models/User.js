@@ -1,24 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema
 
-const CharacterSchema = new Schema({
-    character_name: {
+const UserSchema = new Schema({
+    first_name: {
+        type: String
+    },
+    last_name: {
+        type: String
+    }, 
+    email: {
         type: String,
         required: true
     },
-    character_class: {
+    password: {
         type: String,
         required: true
     }, 
-    character_level: {
-        type: String
-    },
-    character_background: {
-        type: String
-    }, 
-    character_alignment: {
-        type: String
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
-module.exports = User = mongoose.model('characters', CharacterSchema)
+module.exports = User = mongoose.model('users', UserSchema)
