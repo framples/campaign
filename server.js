@@ -11,29 +11,29 @@ app.use(express.static(path.join(__dirname, '/client/build')));
 app.use(bodyParser.json())
 app.use(cors())
 app.use(
-    bodyParser.urlencoded({
-        extended:false
-    })
+  bodyParser.urlencoded({
+    extended: false
+  })
 )
 
-const MongoClient = require('mongodb').MongoClient;
+/*const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://uncleframpton:happyholidays@apex-khhhx.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
-});
+});*/
 
 
 
 
 //mongoose
-  //  .connect(mongoURI, { useNewUrlParser: true })
-    //.then(() => console.log("MongoDB connected"))
-    //.catch(err => console.log(err))
+//  .connect(mongoURI, { useNewUrlParser: true })
+//.then(() => console.log("MongoDB connected"))
+//.catch(err => console.log(err))
 
-    mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/apexdb");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/apexdb");
 
 
 
@@ -42,5 +42,5 @@ let Users = require('./routes/Users')
 app.use('/users', Users);
 
 app.listen(port, () => {
-    console.log("Server is running on port: " + port)
+  console.log("Server is running on port: " + port)
 });
