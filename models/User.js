@@ -1,16 +1,23 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema
 
-const UserSchema = new Schema({
-    first_name: {
-        type: String
+const userSchema = new Schema({
+    username: {
+        type: String,
+        require: true,
+        unique: true,
+        minLength: [4, "Must have a longer username!"] 
     },
-    last_name: {
+    firstname: {
         type: String
     }, 
     email: {
         type: String,
         required: true
+    },
+
+    lastname: {
+        type: String, 
     },
     password: {
         type: String,
@@ -19,7 +26,13 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
-})
+    }, 
+    characters: [
+        {
+            type:Schema.Types.ObjectId,
+            ref: "Char"
+        }
+    ]
+});
 
-module.exports = User = mongoose.model('users', UserSchema)
+module.exports = User = mongoose.model('User', userSchema)

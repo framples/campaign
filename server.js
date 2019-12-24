@@ -1,46 +1,30 @@
-let express = require("express");
-let cors = require("cors");
-let bodyParser = require("body-parser");
-let app = express();
-let mongoose = require("mongoose");
-let port = process.env.PORT || 5000
-let path = require("path");
+require("dotenv").config();
 
-app.use(express.static(path.join(__dirname, '/client/build')));
-
-app.use(bodyParser.json())
-app.use(cors())
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-)
-
-/*const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://uncleframpton:happyholidays@apex-khhhx.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});*/
+const express = require("express");
+const path = require("path");
+const PORT = process.env.PORT || 3001;
+const app = express();
+const routes = require("./routes");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 
+//Middleware
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+app.use(cors());
 
+//Serve static assets
+app.use(express.static(path.join(__dirname, "/client/build")));
 
-//mongoose
-//  .connect(mongoURI, { useNewUrlParser: true })
-//.then(() => console.log("MongoDB connected"))
-//.catch(err => console.log(err))
+//Definte API routes
+app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/apexdb");
+//Connect with MONGODB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/gamesdb");
 
+//Listen for server start
+app.listen(PORT, () => {
+  console.log("API server is now running on port :" + PORT)
+})
 
-
-let Users = require('./routes/Users')
-
-app.use('/users', Users);
-
-app.listen(port, () => {
-  console.log("Server is running on port: " + port)
-});
