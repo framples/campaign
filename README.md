@@ -8,12 +8,6 @@
     the first time in the next few months for a one-shot campaign with some friends.  I thought why not make a website with several things included on it to help give my players information in regards to the campaign.  It's a chance for me to design something fun and practical.  
     
 
-### General Terminology: ###
-1._"DnD"_ = Dungeons and Dragons
-
-2._"One-Shot"_ = A game of DnD meant to end quickly.  Campaigns can stretch long periods of time - a one-shot is a rapid game that usually ends in one session.  A fast paced, highly fun and intense game. 
-
-
 ### MVP: ###
 <br>
     A simple, clean site used to help build excitement for friends for a one-shot campaign of Dungeons and Dragons.  This is purely informational for the players - sometimes with one-shots things move quickly.  Players aren't familiar with the setting/characters/story etc and this should make as an easy reference and a fun tool for the players.  
@@ -37,6 +31,8 @@
         9. Wonderdraft // Watabou https://watabou.itch.io/medieval-fantasy-city-generator // Azgaar's 
         10. Draw.io
         11. Express
+        12. React.js
+        13. MongoDB/Mongoose
 
     
 
