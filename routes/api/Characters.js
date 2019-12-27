@@ -1,4 +1,4 @@
-const router = require("express").Router();
+/*const router = require("express").Router();
 const charactersController = require("../../controllers/APILogic/characters");
 
 router.route("/")
@@ -8,4 +8,4 @@ router.route("/")
 
 router.route("/:id").delete(charactersController.remove);
 
-module.exports = router;
+module.exports = router; */

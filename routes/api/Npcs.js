@@ -1,4 +1,4 @@
-const router = require("express").Router();
+/*const router = require("express").Router();
 const npcsController = require("../../controllers/APILogic/npcs");
 
 router.route("/npcs")
@@ -8,4 +8,4 @@ router.route("/npcs")
 
 router.route("/:id").delete(npcsController.remove);
 
-module.exports = router;
+module.exports = router; */
