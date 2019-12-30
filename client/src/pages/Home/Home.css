@@ -1,0 +1,172 @@
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+    background: #263238;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contenedor .vert-nav-form {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 22px;
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100vh;
+    justify-content: center;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn {
+    height: 0;
+    margin: 12px 0;
+    z-index: 1;
+    color: white;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn:checked {
+    outline: 1;
+    border: 1;
+    color: white;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn:before {
+    content: "";
+    color: white;
+    position: absolute;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.81);
+    border-radius: 11px;
+    cursor: pointer;
+    transition: all 0.25s linear;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn:checked:before {
+    background-color: white;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn:after {
+    content: "" attr(titulo) "";
+    position: relative;
+    left: 30px;
+    opacity: 1;
+    color: white;
+    font-size: 9px;
+    display: block;
+    min-width: 80px;
+    transition: all 0.25s linear;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn:checked:after {
+    opacity: 1;
+    left: 20px;
+  }
+  
+  .contenedor .vert-nav-form .radio-btn:hover:after:not(.Slide) {
+    opacity: 0;
+  }
+  
+  /* SLIDE ONE */
+  .contenedor .vert-nav-form .radio-btn:nth-of-type(1):checked ~ .labels .Slide {
+    -webkit-transform: translateY(-0%);
+    transform: translateY(-0%);
+  }
+  
+  /* TRANSFROM TO SLIDE TWO */
+  .contenedor .vert-nav-form .radio-btn:nth-of-type(2):checked ~ .labels .Slide {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  
+  /* TRANSFORM TO SLIDE THREE */
+  .contenedor .vert-nav-form .radio-btn:nth-of-type(3):checked ~ .labels .Slide {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+  
+  /* TRANSFROM TO SLIDE FOUR */
+  .contenedor .vert-nav-form .radio-btn:nth-of-type(4):checked ~ .labels .Slide {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+  
+  .contenedor .vert-nav-form .labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contenedor .vert-nav-form .labels .Slide {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f44336;
+    z-index: 0;
+    transition: all 0.75s cubic-bezier(0.75, 0.25, 0, 1.05);
+  }
+  
+  .contenedor .vert-nav-form .labels .Slide:nth-child(odd) {
+    background-color: #263238;
+    color: white !important;
+  }
+  
+  .contenedor {
+    font-size: 16px;
+    font-weight: 100;
+    color: white;
+  }
+  
+  .nav-label {
+    color: white !important;
+  }
+  
+  .content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 110px;
+    color: white;
+  }
+  
+  .Slide:nth-child(even) .content .block {
+    color: white !important;
+  }
+  
+  #Slide1 {
+    overflow: hidden;
+    /*border-top: 2px solid white;*/
+  }
+  
+  .homeLink {
+    color: white;
+  }
+  
+  .labels {
+    align-content: left;
+  }
+  
+  .how-it-works-title {
+    margin-bottom: 3rem;
+  }
+  
+  .take-me-there {
+    margin-top: 3rem;
+  }
+  
+  body {
+    background-color: #f44336;
+  }
+  
+  .my-library,
+  .explore-games {
+    background: #263238;
+  }

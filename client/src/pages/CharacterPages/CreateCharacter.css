@@ -1,0 +1,45 @@
+span[data-error]:after {
+    white-space: nowrap;
+  }
+  
+  .clearFields {
+    color: white;
+  }
+  
+  .select-wrapper {
+    font-family: inherit;
+    font-size: 13px;
+    color: #9e9e9e;
+  }
+  
+  main {
+    background-color: #263238;
+  }
+  
+  #addgames {
+    padding-bottom: 2em;
+  }
+  
+  .addgames-title {
+    padding-top: 1em;
+    margin-top: 0;
+  }
+  
+  #gameName,
+  #minPlayers,
+  #maxPlayers,
+  #minPlaytime,
+  #maxPlaytime,
+  #minAge,
+  #complexity,
+  #rating,
+  #image,
+  #rules {
+    color: white;
+  }
+  
+  #complexity-input input.select-dropdown.dropdown-trigger {
+    font-family: inherit;
+    font-size: 15px;
+    color: #9e9e9e;
+  }
