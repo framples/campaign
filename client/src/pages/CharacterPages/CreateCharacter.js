@@ -9,7 +9,7 @@ import './style.css'
 class CreateCharacter extends React.Component {
   static contextType = AppContext
 
-  componentDidMount () {
+  componentDidMount() {
     M.Toast.dismissAll()
     const userToken = ls.get('myCharacter_userToken')
 
@@ -76,7 +76,7 @@ class CreateCharacter extends React.Component {
     let helpInt = $('#int_score)')
     let helpWis = $('#wis_score)')
     let helpCha = $('#cha_score)')
-    
+
 
     const charObject = {
       name: this.state.character_name,
@@ -125,7 +125,7 @@ class CreateCharacter extends React.Component {
     }
 
     if (charObject.str_score) {
-      if (Number(charObject.str_score) >= 21)  {
+      if (Number(charObject.str_score) >= 21) {
         helpStr
           .siblings('.helper-text')
           .text('`')
@@ -142,7 +142,7 @@ class CreateCharacter extends React.Component {
     }
 
     if (charObject.dex_score) {
-      if (Number(charObject.dex_score) >= 21)  {
+      if (Number(charObject.dex_score) >= 21) {
         helpDex
           .siblings('.helper-text')
           .text('`')
@@ -158,7 +158,7 @@ class CreateCharacter extends React.Component {
       }
     }
     if (charObject.con_score) {
-      if (Number(charObject.con_score) >= 21)  {
+      if (Number(charObject.con_score) >= 21) {
         helpCon
           .siblings('.helper-text')
           .text('`')
@@ -174,7 +174,7 @@ class CreateCharacter extends React.Component {
       }
     }
     if (charObject.int_score) {
-      if (Number(charObject.int_score) >= 21)  {
+      if (Number(charObject.int_score) >= 21) {
         helpInt
           .siblings('.helper-text')
           .text('`')
@@ -190,7 +190,7 @@ class CreateCharacter extends React.Component {
       }
     }
     if (charObject.wis_score) {
-      if (Number(charObject.wis_score) >= 21)  {
+      if (Number(charObject.wis_score) >= 21) {
         helpWis
           .siblings('.helper-text')
           .text('`')
@@ -206,7 +206,7 @@ class CreateCharacter extends React.Component {
       }
     }
     if (charObject.cha_score) {
-      if (Number(charObject.cha_score) >= 21)  {
+      if (Number(charObject.cha_score) >= 21) {
         helpCha
           .siblings('.helper-text')
           .text('`')
@@ -252,7 +252,6 @@ class CreateCharacter extends React.Component {
         int_score: this.state.int_score,
         wis_score: this.state.wis_score,
         cha_score: this.state.cha_score,
-        complexity: this.state.complexity,
         token: this.state.token
       }
 
@@ -280,7 +279,6 @@ class CreateCharacter extends React.Component {
           int_score: '',
           wis_score: '',
           cha_score: '',
-          complexity: ''
         })
         this.setState(
           {
@@ -310,7 +308,7 @@ class CreateCharacter extends React.Component {
             M.toast({
               html:
                 '<span>Char created!</span>'
-                // <a href="/mylibrary"><button class="btn-flat toast-action">Go to Library</button></a>
+              // <a href="/mylibrary"><button class="btn-flat toast-action">Go to Library</button></a>
             })
           }
         )
@@ -318,12 +316,12 @@ class CreateCharacter extends React.Component {
     }
   }
 
-  render () {
+  render() {
     return (
-      <div id='addgames'>
+      <div id='createcharacter'>
         <div className='container center'>
-          <h1 className='addgames-title' style={{ color: 'white' }}>
-            Add Games
+          <h1 className='addcharacters-title' style={{ color: 'white' }}>
+            Create Character
           </h1>
           <div className='row'>
             <form className='col s12'>
@@ -336,8 +334,9 @@ class CreateCharacter extends React.Component {
                     onChange={this.handleInputChange}
                     value={this.state.character_name}
                     className='clearFields'
+                    placeholder='Bojulu of Shadowmark'
                   ></input>
-                  <label htmlFor='character_name'>Name of Game</label>
+                  <label htmlFor='character_name'>Name</label>
                   <span className='helper-text'></span>
                 </div>
               </div>
@@ -345,105 +344,93 @@ class CreateCharacter extends React.Component {
                 <div className='input-field col s3'>
                   <input
                     id='character_class'
-                    type='number'
-                    min='1'
-                    step='1'
+                    type='text'
                     name='character_class'
                     onChange={this.handleInputChange}
                     value={this.state.character_class}
                     className='validate clearFields'
+                    placeholder='Barbarian'
                   ></input>
-                  <label htmlFor='character_class'>Minimum Players</label>
+                  <label htmlFor='character_class'>Class(es)</label>
+                  <span className='helper-text'></span>
+                </div>
+                <div className='input-field col s3'>
+                  <input
+                    id='character_race'
+                    type='text'
+                    name='character_race'
+                    onChange={this.handleInputChange}
+                    value={this.state.character_race}
+                    className='validate clearFields'
+                  ></input>
+                  <label htmlFor='character_race'>Race</label>
                   <span className='helper-text'></span>
                 </div>
                 <div className='input-field col s3'>
                   <input
                     id='character_level'
                     type='number'
-                    min='0'
+                    min='1'
+                    max='20'
                     step='1'
                     name='character_level'
+                    placeholder='7'
                     onChange={this.handleInputChange}
                     value={this.state.character_level}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='character_level'>Maximum Players</label>
+                  <label htmlFor='character_level'>Level</label>
                   <span className='helper-text'></span>
                 </div>
                 <div className='input-field col s3'>
                   <input
                     id='character_appearance'
-                    type='number'
-                    min='1'
-                    step='1'
+                    type='text'
                     name='character_appearance'
                     onChange={this.handleInputChange}
                     value={this.state.character_appearance}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='character_appearance'>Minimum Playtime</label>
+                  <label htmlFor='character_appearance'>Appearance Description! (Be detailed!)</label>
                   <span className='helper-text'></span>
                 </div>
                 <div id='add-game-input' className='input-field col s3'>
                   <input
                     id='character_background'
-                    type='number'
-                    min='1'
-                    step='1'
+                    type='text'
                     name='character_background'
                     onChange={this.handleInputChange}
                     value={this.state.character_background}
                     className='validate clearFields'
+                    placeholder='Outlander'
                   ></input>
-                  <label htmlFor='character_background'>Maximum Playtime</label>
+                  <label htmlFor='character_background'>Background</label>
                   <span className='helper-text'></span>
                 </div>
               </div>
               <div className='row'>
-                <div className='input-field col s3'>
-                  <input
+                <div id='character_alignment' className='input-field col s3'>
+                  <select
                     id='character_alignment'
-                    type='number'
-                    min='1'
-                    step='1'
                     name='character_alignment'
                     onChange={this.handleInputChange}
                     value={this.state.character_alignment}
                     className='validate clearFields'
-                  ></input>
-                  <label htmlFor='character_alignment'>Minimum Age</label>
-                  <span className='helper-text'></span>
-                </div>
-                <div id='complexity-input' className='input-field col s3'>
-                  <select
-                    id='complexity'
-                    name='complexity'
-                    onChange={this.handleInputChange}
-                    value={this.state.complexity}
-                    className='validate clearFields'
                   >
-                    <option id='complexity-placeholder' defaultValue='' value=''>
-                      Complexity
+                    <option id='character_alignment placeholder' defaultValue='' value=''>
+                      Alignment
                     </option>
-                    <option value='Light'>Light</option>
-                    <option value='Medium'>Medium</option>
-                    <option value='Heavy'>Heavy</option>
+                    <option value='Lawful Good'>Lawful Good</option>
+                    <option value='Lawful Neutral'>Lawful Neutral</option>
+                    <option value='Lawful Evil'>Lawful Evil</option>
+                    <option value='Neutral Good'>Neutral Good</option>
+                    <option value='True Neutral'>True Neutral</option>
+                    <option value='Neutral Evil'>Neutral Evil</option>
+                    <option value='Chaotic Good'>Chaotic Good</option>
+                    <option value='Chaotic Neutral'>Chaotic Neutral</option>
+                    <option value='Chaotic Evil'>Chaotic Evil</option>
                   </select>
-                  <label htmlFor='complexity'></label>
-                </div>
-                <div className='input-field col s3'>
-                  <input
-                    id='character_race'
-                    type='number'
-                    min='0'
-                    step='.01'
-                    name='character_race'
-                    onChange={this.handleInputChange}
-                    value={this.state.character_race}
-                    className='validate clearFields'
-                  ></input>
-                  <label htmlFor='character_race'>character_race</label>
-                  <span className='helper-text'></span>
+                  <label htmlFor='character_alignment'></label>
                 </div>
                 <div className='input-field col s3'>
                   <input
@@ -454,22 +441,265 @@ class CreateCharacter extends React.Component {
                     value={this.state.character_skillproficiency}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='character_skillproficiency'>character_skillproficiency URL</label>
+                  <label htmlFor='character_skillproficiency'>Proficiencies(Skills only)</label>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='input-field col s3'>
+                  <input
+                    id='character_movementspeed'
+                    type='text'
+                    name='character_movementspeed'
+                    onChange={this.handleInputChange}
+                    value={this.state.character_movementspeed}
+                    className='validate clearFields'
+                    placeholder='30'
+                  ></input>
+                  <label htmlFor='character_alignment'>Movement Speed</label>
+                  <span className='helper-text'></span>
+                </div>
+                <div className='input-field col s3'>
+                  <input
+                    id='character_languages'
+                    type='text'
+                    name='character_languages'
+                    onChange={this.handleInputChange}
+                    value={this.state.character_languages}
+                    className='validate clearFields'
+                  ></input>
+                  <label htmlFor='character_languages'>Languages</label>
+                  <span className='helper-text'></span>
+                </div>
+                <div className='input-field col s3'>
+                  <input
+                    id='character_equipment'
+                    type='text'
+                    name='character_equipment'
+                    onChange={this.handleInputChange}
+                    value={this.state.character_equipment}
+                    className='validate clearFields'
+                    placeholder='Battle Axe'
+                  ></input>
+                  <label htmlFor='character_skillproficiency'>Equipment(Weapons)</label>
                 </div>
               </div>
               <div className='row'>
                 <div className='input-field col s12'>
                   <input
                     id='character_maxhp'
-                    type='text'
+                    type='number'
                     name='character_maxhp'
                     onChange={this.handleInputChange}
                     value={this.state.character_maxhp}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='character_maxhp'>character_maxhp URL</label>
+                  <label htmlFor='character_maxhp'>Max HitPoints</label>
                 </div>
               </div>
+              <div id='str_score' className='input-field col s3'>
+                  <select
+                    id='str_score'
+                    name='str_score'
+                    onChange={this.handleInputChange}
+                    value={this.state.str_score}
+                    className='validate clearFields'
+                  >
+                    <option id='str_score placeholder' defaultValue='' value=''>
+                      Strength
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                  </select>
+                  <label htmlFor='str_score'></label>
+                </div>
+                <div id='dex_score' className='input-field col s3'>
+                  <select
+                    id='dex_score'
+                    name='dex_score'
+                    onChange={this.handleInputChange}
+                    value={this.state.dex_score}
+                    className='validate clearFields'
+                  >
+                    <option id='dex_score placeholder' defaultValue='' value=''>
+                      Dexterity
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                  </select>
+                  <label htmlFor='dex_score'></label>
+                </div>
+                <div id='con_score' className='input-field col s3'>
+                  <select
+                    id='con_score'
+                    name='con_score'
+                    onChange={this.handleInputChange}
+                    value={this.state.con_score}
+                    className='validate clearFields'
+                  >
+                    <option id='con_score placeholder' defaultValue='' value=''>
+                      Constitution
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                  </select>
+                  <label htmlFor='con_score'></label>
+                </div>
+                <div id='int_score' className='input-field col s3'>
+                  <select
+                    id='int_score'
+                    name='int_score'
+                    onChange={this.handleInputChange}
+                    value={this.state.int_score}
+                    className='validate clearFields'
+                  >
+                    <option id='int_score placeholder' defaultValue='' value=''>
+                      Intelligence
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                  </select>
+                  <label htmlFor='int_score'></label>
+                </div>
+                <div id='wis_score' className='input-field col s3'>
+                  <select
+                    id='wis_score'
+                    name='wis_score'
+                    onChange={this.handleInputChange}
+                    value={this.state.wis_score}
+                    className='validate clearFields'
+                  >
+                    <option id='wis_score placeholder' defaultValue='' value=''>
+                      Wisdom
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                  </select>
+                  <label htmlFor='wis_score'></label>
+                </div>
+                <div id='cha_score' className='input-field col s3'>
+                  <select
+                    id='cha_score'
+                    name='cha_score'
+                    onChange={this.handleInputChange}
+                    value={this.state.cha_score}
+                    className='validate clearFields'
+                  >
+                    <option id='str_score placeholder' defaultValue='' value=''>
+                      Charisma
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                  </select>
+                  <label htmlFor='cha_score'></label>
+                </div>
             </form>
             <div className='row'>
               <div className='col s6'>
