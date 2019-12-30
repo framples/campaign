@@ -1,5 +1,5 @@
 import React from 'react'
-import gameLogic from '../../utils/API/gameLogic'
+import charactersLogic from '../../utils/characterLogic'
 import ls from 'local-storage'
 import M from 'materialize-css'
 import { AppContext } from '../../appContext'
@@ -20,7 +20,7 @@ class CreateCharacter extends React.Component {
       M.toast({
         inDuration: 1000,
         html:
-          '<a href="/"><button class="btn-flat toast-action center-align">Log in to add to your library</button></a>'
+          '<a href="/"><button class="btn-flat toast-action center-align">Log in to create your character</button></a>'
       })
     }
 
@@ -30,15 +30,24 @@ class CreateCharacter extends React.Component {
 
   state = {
     error: null,
-    gameName: this.context.gameName,
-    minPlayers: this.context.minPlayers,
-    maxPlayers: this.context.maxPlayers,
-    minPlaytime: this.context.minPlaytime,
-    maxPlaytime: this.context.maxPlaytime,
-    minAge: this.context.minAge,
-    rating: this.context.rating,
-    rules: this.context.rules,
-    image: this.context.image,
+    character_name: this.context.character_name,
+    character_class: this.context.character_class,
+    character_level: this.context.character_level,
+    character_appearance: this.context.character_appearance,
+    character_background: this.context.character_background,
+    character_alignment: this.context.character_alignment,
+    character_race: this.context.character_race,
+    character_maxhp: this.context.character_maxhp,
+    character_skillproficiency: this.context.character_skillproficiency,
+    character_movementspeed: this.context.character_movementspeed,
+    character_languages: this.context.character_languages,
+    character_equipment: this.context.character_equipment,
+    str_score: this.context.str_score,
+    dex_score: this.context.dex_score,
+    con_score: this.context.con_score,
+    int_score: this.context.int_score,
+    wis_score: this.context.wis_score,
+    cha_score: this.context.cha_score,
     complexity: '',
     token: ''
   }
@@ -54,30 +63,43 @@ class CreateCharacter extends React.Component {
 
   formValidation = () => {
     let badForm = false
-    let helpName = $('#gameName')
-    let helpMinPlayers = $('#minPlayers')
-    let helpMaxPlayers = $('#maxPlayers')
-    let helpMinPlaytime = $('#minPlaytime')
-    let helpMaxPlaytime = $('#maxPlaytime')
-    let helpAge = $('#minAge')
-    let helpRating = $('#rating')
+    let helpName = $('#character_name')
+    let helpcharacter_class = $('#character_class')
+    //let helpcharacter_level = $('#character_level')
+    //let helpcharacter_appearance = $('#character_appearance')
+    //let helpcharacter_background = $('#character_background')
+    //let helpAlign = $('#character_alignment')
+    //let helpcharacter_race = $('#character_race')
+    let helpStr = $('#str_score)')
+    let helpDex = $('#dex_score)')
+    let helpCon = $('#con_score)')
+    let helpInt = $('#int_score)')
+    let helpWis = $('#wis_score)')
+    let helpCha = $('#cha_score)')
+    
 
-    const gameObj = {
-      name: this.state.gameName,
-      minPlayers: this.state.minPlayers,
-      maxPlayers: this.state.maxPlayers,
-      minPlaytime: this.state.minPlaytime,
-      maxPlaytime: this.state.maxPlaytime,
-      minAge: this.state.minAge,
-      rating: this.state.rating
+    const charObject = {
+      name: this.state.character_name,
+      character_class: this.state.character_class,
+      character_level: this.state.character_level,
+      character_appearance: this.state.character_appearance,
+      character_background: this.state.character_background,
+      character_alignment: this.state.character_alignment,
+      character_race: this.state.character_race,
+      str_score: this.state.str_score,
+      dex_score: this.state.dex_score,
+      con_score: this.state.con_score,
+      int_score: this.state.int_score,
+      wis_score: this.state.wis_score,
+      cha_score: this.state.cha_score
     }
 
-    if (!gameObj.name) {
-      $('#gameName')
+    if (!charObject.name) {
+      $('#character_name')
         .siblings('.helper-text')
         .text('`')
-        .attr('data-error', 'Name is required')
-      $('#gameName').addClass('invalid')
+        .attr('data-error', 'Character name is required.')
+      $('#character_name').addClass('invalid')
       badForm = true
     } else {
       helpName
@@ -87,98 +109,117 @@ class CreateCharacter extends React.Component {
       helpName.removeClass('invalid')
     }
 
-    if (!gameObj.minPlayers) {
-      helpMinPlayers
+    if (!charObject.character_class) {
+      helpcharacter_class
         .siblings('.helper-text')
         .text('`')
-        .attr('data-error', 'Min Players is required')
-      helpMinPlayers.addClass('invalid')
+        .attr('data-error', 'Character class is required.')
+      helpcharacter_class.addClass('invalid')
       badForm = true
     } else {
-      helpMinPlayers
+      helpcharacter_class
         .siblings('.helper-text')
         .attr('data-error', '')
         .text('')
-      helpMinPlayers.removeClass('invalid')
+      helpcharacter_class.removeClass('invalid')
     }
 
-    if (gameObj.maxPlayers) {
-      if (Number(gameObj.maxPlayers) < Number(gameObj.minPlayers)) {
-        helpMaxPlayers
+    if (charObject.str_score) {
+      if (Number(charObject.str_score) >= 21)  {
+        helpStr
           .siblings('.helper-text')
           .text('`')
-          .attr('data-error', 'Max Players < Min Players')
-        helpMaxPlayers.addClass('invalid')
+          .attr('data-error', 'You cant possibly be that strong.')
+        helpStr.addClass('invalid')
         badForm = true
       } else {
-        helpMaxPlayers
+        helpStr
           .siblings('.helper-text')
           .attr('data-error', '')
           .text('')
-        helpMaxPlayers.removeClass('invalid')
+        helpStr.removeClass('invalid')
       }
     }
 
-    if (!gameObj.minPlaytime) {
-      helpMinPlaytime
-        .siblings('.helper-text')
-        .text('`')
-        .attr('data-error', 'Min Playtime is required')
-      helpMinPlaytime.addClass('invalid')
-      badForm = true
-    } else {
-      helpMinPlaytime
-        .siblings('.helper-text')
-        .attr('data-error', '')
-        .text('')
-      helpMinPlaytime.removeClass('invalid')
-    }
-
-    if (gameObj.maxPlaytime) {
-      if (Number(gameObj.maxPlaytime) < Number(gameObj.minPlaytime)) {
-        helpMaxPlaytime
+    if (charObject.dex_score) {
+      if (Number(charObject.dex_score) >= 21)  {
+        helpDex
           .siblings('.helper-text')
           .text('`')
-          .attr('data-error', 'Max Playtime < Min Playtime')
-        helpMaxPlaytime.addClass('invalid')
+          .attr('data-error', 'You cant possibly be that swift.')
+        helpDex.addClass('invalid')
         badForm = true
       } else {
-        helpMaxPlaytime
+        helpDex
           .siblings('.helper-text')
           .attr('data-error', '')
           .text('')
-        helpMaxPlaytime.removeClass('invalid')
+        helpDex.removeClass('invalid')
       }
     }
-
-    if (!gameObj.minAge) {
-      helpAge
-        .siblings('.helper-text')
-        .text('`')
-        .attr('data-error', 'Min Age is required')
-      helpAge.addClass('invalid')
-      badForm = true
-    } else {
-      helpAge
-        .siblings('.helper-text')
-        .attr('data-error', '')
-        .text('')
-      helpAge.removeClass('invalid')
+    if (charObject.con_score) {
+      if (Number(charObject.con_score) >= 21)  {
+        helpCon
+          .siblings('.helper-text')
+          .text('`')
+          .attr('data-error', 'You cant possibly be that tanky.')
+        helpCon.addClass('invalid')
+        badForm = true
+      } else {
+        helpCon
+          .siblings('.helper-text')
+          .attr('data-error', '')
+          .text('')
+        helpCon.removeClass('invalid')
+      }
     }
-
-    if (!gameObj.rating) {
-      helpRating
-        .siblings('.helper-text')
-        .text('`')
-        .attr('data-error', 'Rating is required')
-      helpRating.addClass('invalid')
-      badForm = true
-    } else {
-      helpRating
-        .siblings('.helper-text')
-        .attr('data-error', '')
-        .text('')
-      helpRating.removeClass('invalid')
+    if (charObject.int_score) {
+      if (Number(charObject.int_score) >= 21)  {
+        helpInt
+          .siblings('.helper-text')
+          .text('`')
+          .attr('data-error', 'You cant possibly be that smart.')
+        helpInt.addClass('invalid')
+        badForm = true
+      } else {
+        helpInt
+          .siblings('.helper-text')
+          .attr('data-error', '')
+          .text('')
+        helpInt.removeClass('invalid')
+      }
+    }
+    if (charObject.wis_score) {
+      if (Number(charObject.wis_score) >= 21)  {
+        helpWis
+          .siblings('.helper-text')
+          .text('`')
+          .attr('data-error', 'You cant possibly be that wise.')
+        helpWis.addClass('invalid')
+        badForm = true
+      } else {
+        helpWis
+          .siblings('.helper-text')
+          .attr('data-error', '')
+          .text('')
+        helpWis.removeClass('invalid')
+      }
+    }
+    if (charObject.cha_score) {
+      if (Number(charObject.cha_score) >= 21)  {
+        helpCha
+          .siblings('.helper-text')
+          .text('`')
+          .attr('data-error', 'You cant possibly be that smart.')
+        helpCha.addClass('invalid')
+        badForm = true
+      } else {
+        helpCha
+          .siblings('.helper-text')
+          .attr('data-error', '')
+          .text('')
+        helpCha.removeClass('invalid')
+      }
     }
 
     if (badForm) {
@@ -192,60 +233,75 @@ class CreateCharacter extends React.Component {
     event.preventDefault()
 
     if (this.formValidation()) {
-      const gameObj = {
-        name: this.state.gameName,
-        minPlayers: this.state.minPlayers,
-        maxPlayers: this.state.maxPlayers,
-        minPlaytime: this.state.minPlaytime,
-        maxPlaytime: this.state.maxPlaytime,
-        minAge: this.state.minAge,
-        rating: this.state.rating,
-        rules: this.state.rules,
-        image: this.state.image,
+      const charObject = {
+        character_name: this.state.character_name,
+        character_class: this.state.character_class,
+        character_level: this.state.character_level,
+        character_appearance: this.state.character_appearance,
+        character_background: this.state.character_background,
+        character_alignment: this.state.character_alignment,
+        character_race: this.state.character_race,
+        character_maxhp: this.state.character_maxhp,
+        character_skillproficiency: this.state.character_skillproficiency,
+        character_movementspeed: this.state.character_movementspeed,
+        character_languages: this.state.character_languages,
+        character_equipment: this.state.character_equipment,
+        str_score: this.state.str_score,
+        dex_score: this.state.dex_score,
+        con_score: this.state.con_score,
+        int_score: this.state.int_score,
+        wis_score: this.state.wis_score,
+        cha_score: this.state.cha_score,
         complexity: this.state.complexity,
         token: this.state.token
       }
 
       if (this.context.userId) {
-        gameObj._id = this.context._id
+        charObject._id = this.context._id
       }
 
-      if (!gameObj.maxPlaytime) {
-        gameObj.maxPlaytime = gameObj.minPlaytime
-      }
-
-      if (!gameObj.maxPlayers) {
-        gameObj.maxPlayers = gameObj.minPlayers
-      }
-
-      if (!gameObj.image) {
-        gameObj.image =  "https://image.flaticon.com/icons/png/512/103/103226.png";
-      }
-
-      gameLogic.saveGame(gameObj).then(resp => {
+      charactersLogic.saveGame(charObject).then(resp => {
         this.context.update({
-          gameName: '',
-          minPlayers: '',
-          maxPlayers: '',
-          minPlaytime: '',
-          maxPlaytime: '',
-          minAge: '',
-          rating: '',
-          rules: '',
-          image: '',
+          character_name: '',
+          character_class: '',
+          character_level: '',
+          character_appearance: '',
+          character_background: '',
+          character_alignment: '',
+          character_race: '',
+          character_maxhp: '',
+          character_skillproficiency: '',
+          character_movementspeed: '',
+          character_languages: '',
+          character_equipment: '',
+          str_score: '',
+          dex_score: '',
+          con_score: '',
+          int_score: '',
+          wis_score: '',
+          cha_score: '',
           complexity: ''
         })
         this.setState(
           {
-            gameName: '',
-            minPlayers: '',
-            maxPlayers: '',
-            minPlaytime: '',
-            maxPlaytime: '',
-            minAge: '',
-            rating: '',
-            rules: '',
-            image: '',
+            character_name: '',
+            character_class: '',
+            character_level: '',
+            character_appearance: '',
+            character_background: '',
+            character_alignment: '',
+            character_race: '',
+            character_maxhp: '',
+            character_skillproficiency: '',
+            character_movementspeed: '',
+            character_languages: '',
+            character_equipment: '',
+            str_score: '',
+            dex_score: '',
+            con_score: '',
+            int_score: '',
+            wis_score: '',
+            cha_score: '',
             complexity: ''
           },
           () => {
@@ -253,7 +309,7 @@ class CreateCharacter extends React.Component {
             $('.clearFields').removeClass('valid')
             M.toast({
               html:
-                '<span>Game added!</span>'
+                '<span>Char created!</span>'
                 // <a href="/mylibrary"><button class="btn-flat toast-action">Go to Library</button></a>
             })
           }
@@ -274,88 +330,88 @@ class CreateCharacter extends React.Component {
               <div className='row'>
                 <div className='input-field col s12'>
                   <input
-                    id='gameName'
+                    id='character_name'
                     type='text'
-                    name='gameName'
+                    name='character_name'
                     onChange={this.handleInputChange}
-                    value={this.state.gameName}
+                    value={this.state.character_name}
                     className='clearFields'
                   ></input>
-                  <label htmlFor='gameName'>Name of Game</label>
+                  <label htmlFor='character_name'>Name of Game</label>
                   <span className='helper-text'></span>
                 </div>
               </div>
               <div className='row'>
                 <div className='input-field col s3'>
                   <input
-                    id='minPlayers'
+                    id='character_class'
                     type='number'
                     min='1'
                     step='1'
-                    name='minPlayers'
+                    name='character_class'
                     onChange={this.handleInputChange}
-                    value={this.state.minPlayers}
+                    value={this.state.character_class}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='minPlayers'>Minimum Players</label>
+                  <label htmlFor='character_class'>Minimum Players</label>
                   <span className='helper-text'></span>
                 </div>
                 <div className='input-field col s3'>
                   <input
-                    id='maxPlayers'
+                    id='character_level'
                     type='number'
                     min='0'
                     step='1'
-                    name='maxPlayers'
+                    name='character_level'
                     onChange={this.handleInputChange}
-                    value={this.state.maxPlayers}
+                    value={this.state.character_level}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='maxPlayers'>Maximum Players</label>
+                  <label htmlFor='character_level'>Maximum Players</label>
                   <span className='helper-text'></span>
                 </div>
                 <div className='input-field col s3'>
                   <input
-                    id='minPlaytime'
+                    id='character_appearance'
                     type='number'
                     min='1'
                     step='1'
-                    name='minPlaytime'
+                    name='character_appearance'
                     onChange={this.handleInputChange}
-                    value={this.state.minPlaytime}
+                    value={this.state.character_appearance}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='minPlaytime'>Minimum Playtime</label>
+                  <label htmlFor='character_appearance'>Minimum Playtime</label>
                   <span className='helper-text'></span>
                 </div>
                 <div id='add-game-input' className='input-field col s3'>
                   <input
-                    id='maxPlaytime'
+                    id='character_background'
                     type='number'
                     min='1'
                     step='1'
-                    name='maxPlaytime'
+                    name='character_background'
                     onChange={this.handleInputChange}
-                    value={this.state.maxPlaytime}
+                    value={this.state.character_background}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='maxPlaytime'>Maximum Playtime</label>
+                  <label htmlFor='character_background'>Maximum Playtime</label>
                   <span className='helper-text'></span>
                 </div>
               </div>
               <div className='row'>
                 <div className='input-field col s3'>
                   <input
-                    id='minAge'
+                    id='character_alignment'
                     type='number'
                     min='1'
                     step='1'
-                    name='minAge'
+                    name='character_alignment'
                     onChange={this.handleInputChange}
-                    value={this.state.minAge}
+                    value={this.state.character_alignment}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='minAge'>Minimum Age</label>
+                  <label htmlFor='character_alignment'>Minimum Age</label>
                   <span className='helper-text'></span>
                 </div>
                 <div id='complexity-input' className='input-field col s3'>
@@ -377,41 +433,41 @@ class CreateCharacter extends React.Component {
                 </div>
                 <div className='input-field col s3'>
                   <input
-                    id='rating'
+                    id='character_race'
                     type='number'
                     min='0'
                     step='.01'
-                    name='rating'
+                    name='character_race'
                     onChange={this.handleInputChange}
-                    value={this.state.rating}
+                    value={this.state.character_race}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='rating'>Rating</label>
+                  <label htmlFor='character_race'>character_race</label>
                   <span className='helper-text'></span>
                 </div>
                 <div className='input-field col s3'>
                   <input
-                    id='image'
+                    id='character_skillproficiency'
                     type='text'
-                    name='image'
+                    name='character_skillproficiency'
                     onChange={this.handleInputChange}
-                    value={this.state.image}
+                    value={this.state.character_skillproficiency}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='image'>Image URL</label>
+                  <label htmlFor='character_skillproficiency'>character_skillproficiency URL</label>
                 </div>
               </div>
               <div className='row'>
                 <div className='input-field col s12'>
                   <input
-                    id='rules'
+                    id='character_maxhp'
                     type='text'
-                    name='rules'
+                    name='character_maxhp'
                     onChange={this.handleInputChange}
-                    value={this.state.rules}
+                    value={this.state.character_maxhp}
                     className='validate clearFields'
                   ></input>
-                  <label htmlFor='rules'>Rules URL</label>
+                  <label htmlFor='character_maxhp'>character_maxhp URL</label>
                 </div>
               </div>
             </form>
